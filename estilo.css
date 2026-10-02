@@ -1,230 +1,465 @@
-/* MediConsulta — hoja de estilo unica para todo el sitio.
-   Sin framework: son cuatro paginas de texto. */
+/* MediConsulta — sitio publico.
+   Sin framework ni JavaScript: son cuatro paginas de texto. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --teal: #00897b;
-  --teal-oscuro: #00695c;
-  --teal-claro: #e0f2f1;
-  --texto: #1f2933;
-  --texto-suave: #52606d;
-  --borde: #e4e7eb;
-  --fondo: #ffffff;
-  --fondo-alt: #f7f9fa;
-  --alerta: #c0392b;
-  --ancho: 760px;
+  --teal-900: #00564d;
+  --teal-700: #00796b;
+  --teal-600: #00897b;
+  --teal-500: #26a69a;
+  --teal-50:  #e6f4f2;
+
+  --tinta:    #0f1e26;
+  --tinta-60: #4a5c66;
+  --tinta-40: #7b8a93;
+  --linea:    #e3e9ec;
+  --papel:    #ffffff;
+  --papel-2:  #f6f9fa;
+
+  --ambar:    #e08900;
+  --rojo:     #c0392b;
+
+  --ancho:    1080px;
+  --lectura:  700px;
+  --radio:    16px;
+
+  --sombra-1: 0 1px 2px rgba(15, 30, 38, .06),
+              0 4px 14px rgba(15, 30, 38, .05);
+  --sombra-2: 0 2px 6px rgba(15, 30, 38, .08),
+              0 18px 48px rgba(15, 30, 38, .12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --tinta:    #e8eef1;
+    --tinta-60: #a3b2bb;
+    --tinta-40: #78878f;
+    --linea:    #223039;
+    --papel:    #0d161b;
+    --papel-2:  #121e24;
+    --teal-50:  #11312e;
+    --sombra-1: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
+    --sombra-2: 0 2px 6px rgba(0,0,0,.5), 0 18px 48px rgba(0,0,0,.45);
+  }
+}
+
+:root[data-theme="dark"] {
+  --tinta:    #e8eef1;
+  --tinta-60: #a3b2bb;
+  --tinta-40: #78878f;
+  --linea:    #223039;
+  --papel:    #0d161b;
+  --papel-2:  #121e24;
+  --teal-50:  #11312e;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-               "Helvetica Neue", Arial, sans-serif;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+               sans-serif;
   font-size: 17px;
   line-height: 1.65;
-  color: var(--texto);
-  background: var(--fondo);
+  -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
 }
 
-/* ---------------------------------------------------------- encabezado */
-header.sitio {
-  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-oscuro) 100%);
-  color: #fff;
+.caja { max-width: var(--ancho); margin: 0 auto; padding: 0 24px; }
+.estrecho { max-width: var(--lectura); }
+
+a { color: var(--teal-700); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+/* ======================================================== barra superior */
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--papel) 88%, transparent);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--linea);
 }
 
-header.sitio .barra {
-  max-width: var(--ancho);
-  margin: 0 auto;
-  padding: 18px 20px;
+.barra .caja {
   display: flex;
   align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
+  gap: 24px;
+  height: 64px;
 }
 
 .marca {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #fff;
-  text-decoration: none;
-  letter-spacing: -0.01em;
-}
-
-.marca span { opacity: 0.8; font-weight: 400; }
-
-header.sitio nav {
-  margin-left: auto;
   display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-header.sitio nav a {
-  color: #fff;
+  align-items: center;
+  gap: 9px;
+  font-weight: 700;
+  font-size: 1.07rem;
+  color: var(--tinta);
   text-decoration: none;
-  opacity: 0.9;
-  font-size: 0.95rem;
+  letter-spacing: -.02em;
+  white-space: nowrap;
 }
 
-header.sitio nav a:hover { opacity: 1; text-decoration: underline; }
+.marca .logo {
+  width: 30px; height: 30px;
+  border-radius: 9px;
+  background: linear-gradient(140deg, var(--teal-500), var(--teal-900));
+  display: grid; place-items: center;
+  flex: none;
+  box-shadow: var(--sombra-1);
+}
 
-/* ------------------------------------------------------------- portada */
+.barra nav { margin-left: auto; display: flex; gap: 26px; align-items: center; }
+
+.barra nav a {
+  color: var(--tinta-60);
+  text-decoration: none;
+  font-size: .95rem;
+  font-weight: 500;
+}
+.barra nav a:hover { color: var(--teal-700); }
+
+/* =============================================================== portada */
 .portada {
-  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-oscuro) 100%);
-  color: #fff;
-  padding: 10px 20px 64px;
+  position: relative;
+  overflow: hidden;
+  padding: 84px 0 96px;
+  background:
+    radial-gradient(1100px 520px at 15% -10%,
+                    color-mix(in srgb, var(--teal-500) 16%, transparent), transparent 70%),
+    radial-gradient(900px 480px at 92% 8%,
+                    color-mix(in srgb, var(--teal-700) 12%, transparent), transparent 70%);
 }
 
-.portada .caja { max-width: var(--ancho); margin: 0 auto; }
+.portada .caja {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.pildora {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 10px;
+  border-radius: 999px;
+  background: var(--teal-50);
+  color: var(--teal-700);
+  font-size: .84rem;
+  font-weight: 600;
+  margin-bottom: 22px;
+  border: 1px solid color-mix(in srgb, var(--teal-600) 22%, transparent);
+}
 
 .portada h1 {
-  font-size: clamp(1.9rem, 5vw, 2.6rem);
-  line-height: 1.2;
-  margin: 0 0 16px;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.2rem, 4.6vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -.035em;
+  font-weight: 800;
+  margin: 0 0 20px;
 }
 
-.portada p.bajada {
-  font-size: 1.15rem;
-  opacity: 0.93;
-  margin: 0 0 28px;
-  max-width: 44ch;
+.portada h1 em {
+  font-style: normal;
+  background: linear-gradient(120deg, var(--teal-600), var(--teal-900));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* ------------------------------------------------------------ contenido */
-main {
-  max-width: var(--ancho);
+.bajada {
+  font-size: 1.16rem;
+  color: var(--tinta-60);
+  margin: 0 0 30px;
+  max-width: 46ch;
+}
+
+.acciones { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.boton:hover { transform: translateY(-1px); }
+
+.boton.primario {
+  background: linear-gradient(140deg, var(--teal-600), var(--teal-900));
+  color: #fff;
+  box-shadow: var(--sombra-2);
+}
+
+.boton.suave {
+  background: var(--papel);
+  color: var(--tinta);
+  border-color: var(--linea);
+  box-shadow: var(--sombra-1);
+}
+
+.nota-chica { font-size: .88rem; color: var(--tinta-40); margin: 16px 0 0; }
+
+/* ------------------------------------------------- el telefono dibujado */
+.telefono {
+  width: 290px;
   margin: 0 auto;
-  padding: 48px 20px 72px;
+  border-radius: 38px;
+  padding: 11px;
+  background: linear-gradient(160deg, #1b2a32, #0a1216);
+  box-shadow: var(--sombra-2), 0 0 0 1px rgba(255,255,255,.06) inset;
 }
 
-main.legal { padding-top: 36px; }
-
-h2 {
-  font-size: 1.45rem;
-  margin: 44px 0 14px;
-  letter-spacing: -0.01em;
-  line-height: 1.3;
+.pantalla {
+  border-radius: 28px;
+  overflow: hidden;
+  background: #f4f7f8;
+  line-height: 0;
 }
 
-h3 {
-  font-size: 1.1rem;
-  margin: 28px 0 10px;
-  color: var(--texto-suave);
+.pantalla img { width: 100%; height: auto; display: block; }
+
+/* ============================================================== secciones */
+section { padding: 84px 0; }
+section.alt { background: var(--papel-2); border-block: 1px solid var(--linea); }
+
+.titulo { max-width: 620px; margin: 0 0 44px; }
+.titulo .eyebrow {
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--teal-600);
+  margin: 0 0 10px;
 }
-
-h2:first-child, h3:first-child { margin-top: 0; }
-
-p { margin: 0 0 16px; }
-
-ul { margin: 0 0 16px; padding-left: 22px; }
-li { margin-bottom: 8px; }
-
-a { color: var(--teal-oscuro); }
-
-strong { font-weight: 650; }
-
-hr {
-  border: 0;
-  border-top: 1px solid var(--borde);
-  margin: 40px 0;
+.titulo h2 {
+  font-size: clamp(1.65rem, 3vw, 2.15rem);
+  letter-spacing: -.025em;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  font-weight: 750;
 }
+.titulo p { color: var(--tinta-60); margin: 0; font-size: 1.05rem; }
 
-/* ------------------------------------------------------------- tarjetas */
-.tarjetas {
+.rejilla {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-  margin: 28px 0;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  gap: 20px;
 }
 
 .tarjeta {
-  border: 1px solid var(--borde);
-  border-radius: 12px;
-  padding: 20px;
-  background: var(--fondo-alt);
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 26px;
+  box-shadow: var(--sombra-1);
 }
 
-.tarjeta h3 { margin: 0 0 8px; color: var(--texto); font-size: 1.05rem; }
-.tarjeta p { margin: 0; color: var(--texto-suave); font-size: 0.97rem; }
+.tarjeta .icono {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: var(--teal-50);
+  color: var(--teal-700);
+  display: grid; place-items: center;
+  margin-bottom: 16px;
+}
 
-/* --------------------------------------------------------------- planes */
+.tarjeta h3 {
+  margin: 0 0 8px;
+  font-size: 1.07rem;
+  letter-spacing: -.015em;
+  font-weight: 650;
+}
+.tarjeta p { margin: 0; color: var(--tinta-60); font-size: .97rem; }
+
+/* ----------------------------------------------------------- destacado */
+.destacado {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  align-items: start;
+  background: linear-gradient(140deg,
+              color-mix(in srgb, var(--teal-600) 9%, var(--papel)),
+              var(--papel));
+  border: 1px solid color-mix(in srgb, var(--teal-600) 26%, transparent);
+  border-radius: var(--radio);
+  padding: 28px;
+  margin-top: 36px;
+}
+.destacado .icono {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: var(--teal-50);
+  color: var(--teal-700);
+  display: grid; place-items: center;
+}
+.destacado h3 { margin: 0 0 8px; font-size: 1.12rem; letter-spacing: -.015em; }
+.destacado p  { margin: 0; color: var(--tinta-60); }
+
+/* ------------------------------------------------------------- pasos */
+.pasos { counter-reset: paso; display: grid; gap: 26px; max-width: 640px; }
+.paso { display: grid; grid-template-columns: 42px 1fr; gap: 18px; align-items: start; }
+.paso::before {
+  counter-increment: paso;
+  content: counter(paso);
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, var(--teal-600), var(--teal-900));
+  color: #fff;
+  display: grid; place-items: center;
+  font-weight: 700;
+  box-shadow: var(--sombra-1);
+}
+.paso h3 { margin: 6px 0 6px; font-size: 1.07rem; letter-spacing: -.015em; }
+.paso p  { margin: 0; color: var(--tinta-60); font-size: .98rem; }
+
+/* ------------------------------------------------------------ planes */
 .planes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-  margin: 24px 0;
+  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  gap: 20px;
+  align-items: start;
 }
 
 .plan {
-  border: 1px solid var(--borde);
-  border-radius: 12px;
-  padding: 22px;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 28px;
+  box-shadow: var(--sombra-1);
+  position: relative;
 }
 
-.plan.destacado { border-color: var(--teal); border-width: 2px; }
+.plan.elegido {
+  border-color: var(--teal-600);
+  box-shadow: var(--sombra-2);
+}
 
-.plan .nombre { font-weight: 700; font-size: 1.1rem; }
-.plan .precio {
-  font-size: 1.7rem;
+.plan .cinta {
+  position: absolute;
+  top: -11px; left: 28px;
+  background: linear-gradient(140deg, var(--teal-600), var(--teal-900));
+  color: #fff;
+  font-size: .72rem;
   font-weight: 700;
-  color: var(--teal-oscuro);
-  margin: 6px 0 2px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
 }
-.plan .periodo { color: var(--texto-suave); font-size: 0.9rem; }
-.plan ul { margin-top: 14px; font-size: 0.97rem; }
 
-/* ----------------------------------------------------------------- aviso */
+.plan .nombre { font-weight: 700; font-size: 1.06rem; letter-spacing: -.01em; }
+.plan .monto {
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -.035em;
+  margin: 10px 0 0;
+  line-height: 1;
+}
+.plan .monto small { font-size: .95rem; font-weight: 500; color: var(--tinta-40); }
+.plan ul { list-style: none; margin: 20px 0 0; padding: 0; }
+.plan li {
+  display: flex; gap: 10px; align-items: flex-start;
+  margin-bottom: 11px;
+  font-size: .96rem;
+  color: var(--tinta-60);
+}
+.plan li svg { flex: none; margin-top: 4px; color: var(--teal-600); }
+
+/* ============================================================ pie */
+footer.sitio {
+  border-top: 1px solid var(--linea);
+  background: var(--papel-2);
+  padding: 48px 0 56px;
+}
+footer.sitio .caja { display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
+footer.sitio nav { display: flex; gap: 22px; flex-wrap: wrap; }
+footer.sitio a { color: var(--tinta-60); text-decoration: none; font-size: .94rem; }
+footer.sitio a:hover { color: var(--teal-700); }
+footer.sitio .quien {
+  margin-left: auto;
+  color: var(--tinta-40);
+  font-size: .88rem;
+  text-align: right;
+}
+
+/* ====================================================== paginas legales */
+main.legal {
+  max-width: var(--lectura);
+  margin: 0 auto;
+  padding: 52px 24px 86px;
+}
+
+main.legal h1 {
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  letter-spacing: -.03em;
+  line-height: 1.15;
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+
+main.legal h2 {
+  font-size: 1.32rem;
+  letter-spacing: -.02em;
+  margin: 46px 0 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--linea);
+  font-weight: 700;
+}
+main.legal h2:first-of-type { border-top: 0; padding-top: 0; }
+
+main.legal h3 {
+  font-size: 1.04rem;
+  margin: 28px 0 10px;
+  color: var(--tinta);
+  font-weight: 650;
+}
+
+main.legal p  { margin: 0 0 16px; }
+main.legal ul { margin: 0 0 18px; padding-left: 20px; }
+main.legal li { margin-bottom: 9px; }
+
+.fecha { color: var(--tinta-40); font-size: .93rem; margin: 0 0 28px; }
+
 .aviso {
-  background: var(--teal-claro);
-  border-left: 4px solid var(--teal);
-  border-radius: 0 8px 8px 0;
-  padding: 16px 18px;
+  background: var(--teal-50);
+  border: 1px solid color-mix(in srgb, var(--teal-600) 24%, transparent);
+  border-radius: 12px;
+  padding: 18px 20px;
   margin: 24px 0;
 }
 .aviso p:last-child { margin-bottom: 0; }
 
 .aviso.ojo {
-  background: #fdf0ed;
-  border-left-color: var(--alerta);
+  background: color-mix(in srgb, var(--rojo) 7%, var(--papel));
+  border-color: color-mix(in srgb, var(--rojo) 30%, transparent);
 }
 
-/* ------------------------------------------------------------------ pie */
-footer.sitio {
-  border-top: 1px solid var(--borde);
-  background: var(--fondo-alt);
-  padding: 28px 20px 40px;
+/* ------------------------------------------------------------ telefono */
+@media (max-width: 900px) {
+  .portada { padding: 56px 0 64px; }
+  .portada .caja { grid-template-columns: 1fr; gap: 44px; }
+  .telefono { width: 262px; }
 }
 
-footer.sitio .caja {
-  max-width: var(--ancho);
-  margin: 0 auto;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  align-items: baseline;
-  font-size: 0.92rem;
-  color: var(--texto-suave);
-}
-
-footer.sitio nav { display: flex; gap: 18px; flex-wrap: wrap; }
-footer.sitio a { color: var(--texto-suave); }
-footer.sitio .quien { margin-left: auto; }
-
-.fecha {
-  color: var(--texto-suave);
-  font-size: 0.92rem;
-  margin-top: -6px;
-}
-
-/* -------------------------------------------------------------- telefono */
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  header.sitio .barra { padding: 14px 16px; }
-  header.sitio nav { gap: 14px; width: 100%; margin-left: 0; }
-  main { padding: 32px 16px 56px; }
-  .portada { padding-bottom: 44px; }
-  footer.sitio .caja { flex-direction: column; gap: 12px; }
-  footer.sitio .quien { margin-left: 0; }
+  .caja { padding: 0 16px; }
+  section { padding: 60px 0; }
+  .barra nav { gap: 16px; }
+  .barra nav a.ocultable { display: none; }
+  .acciones .boton { width: 100%; justify-content: center; }
+  footer.sitio .caja { flex-direction: column; gap: 18px; }
+  footer.sitio .quien { margin-left: 0; text-align: left; }
+  main.legal { padding: 36px 16px 64px; }
 }

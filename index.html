@@ -3,17 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MediConsulta — Agenda, cobros y caja para tu consulta</title>
-<meta name="description" content="Aplicación para médicos en República Dominicana: agenda, cobros, caja diaria y reportes. Con acceso para tu asistente.">
+<title>MediConsulta — Agenda, cobros y caja para tu consultorio</title>
+<meta name="description" content="App para médicos en República Dominicana: agenda el día, cobra al paciente y cuadra la caja. Con acceso para tu asistente y aprobación tuya para lo que mueve dinero.">
+<meta property="og:title" content="MediConsulta">
+<meta property="og:description" content="Agenda, cobros y caja para tu consultorio. Hecho para República Dominicana.">
+<meta property="og:type" content="website">
 <link rel="stylesheet" href="estilo.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2300796b'/><path d='M50 26v48M26 50h48' stroke='white' stroke-width='12' stroke-linecap='round'/></svg>">
 </head>
 <body>
 
-<header class="sitio">
-  <div class="barra">
-    <a class="marca" href="index.html">MediConsulta</a>
+<header class="barra">
+  <div class="caja">
+    <a class="marca" href="index.html">
+      <span class="logo">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </span>
+      MediConsulta
+    </a>
     <nav>
-      <a href="#que-hace">Qué hace</a>
+      <a href="#funciones" class="ocultable">Funciones</a>
+      <a href="#como" class="ocultable">Cómo funciona</a>
       <a href="#planes">Planes</a>
       <a href="soporte.html">Soporte</a>
     </nav>
@@ -22,141 +32,266 @@
 
 <section class="portada">
   <div class="caja">
-    <h1>Tu consulta ordenada, sin hojas sueltas</h1>
-    <p class="bajada">
-      Agenda, cobros y caja diaria en un solo lugar. Hecho para consultorios
-      en República Dominicana.
-    </p>
+    <div>
+      <span class="pildora">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        14 días de prueba, sin tarjeta
+      </span>
+
+      <h1>Tu consultorio<br><em>ordenado de verdad</em></h1>
+
+      <p class="bajada">
+        Agenda el día, cobra cuando el paciente llega y cuadra la caja antes
+        de irte. Hecho para consultorios en República Dominicana.
+      </p>
+
+      <div class="acciones">
+        <a class="boton primario" href="#planes">
+          Ver los planes
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="boton suave" href="#como">Cómo funciona</a>
+      </div>
+
+      <p class="nota-chica">
+        Sin instalar nada en una computadora. Entras con tu cuenta de Google.
+      </p>
+    </div>
+
+    <div class="telefono">
+      <div class="pantalla">
+        <img src="img/agenda.png" alt="La agenda del día en MediConsulta: pacientes por hora, quién ya llegó y quién ya pagó." width="1008" height="2104">
+      </div>
+    </div>
   </div>
 </section>
 
-<main>
+<section id="funciones">
+  <div class="caja">
+    <div class="titulo">
+      <p class="eyebrow">Qué hace</p>
+      <h2>Lo que de verdad pasa en un consultorio</h2>
+      <p>
+        No es un calendario con botones de más. Es el día de trabajo completo:
+        quién viene, quién llegó, quién pagó y cuánto hay en la gaveta.
+      </p>
+    </div>
 
-  <h2 id="que-hace">Qué hace</h2>
+    <div class="rejilla">
 
-  <div class="tarjetas">
-    <div class="tarjeta">
-      <h3>Agenda</h3>
-      <p>
-        Las horas del día, quién viene y quién ya llegó. Si el doctor se
-        atrasa, corres la agenda completa y la app te arma el mensaje para
-        avisarle a cada paciente.
-      </p>
+      <article class="tarjeta">
+        <div class="icono">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h3>La agenda del día</h3>
+        <p>
+          Las horas libres y las tomadas, de un vistazo. Arrastras una cita a
+          otra hora y listo.
+        </p>
+      </article>
+
+      <article class="tarjeta">
+        <div class="icono">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Cobros</h3>
+        <p>
+          Efectivo, tarjeta, transferencia o ARS. La cobertura del seguro se
+          aplica sola y la cita queda marcada como cobrada.
+        </p>
+      </article>
+
+      <article class="tarjeta">
+        <div class="icono">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>Caja diaria</h3>
+        <p>
+          Cuentas el efectivo al cerrar y la app te dice si <strong>cuadra,
+          falta o sobra</strong>. Se acabó aprobar cierres a ciegas.
+        </p>
+      </article>
+
+      <article class="tarjeta">
+        <div class="icono">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
+        </div>
+        <h3>Tu asistente</h3>
+        <p>
+          Trabaja contigo sin ver lo que no le toca. Y lo que mueve dinero,
+          <strong>ella lo pide y tú lo apruebas</strong>.
+        </p>
+      </article>
+
+      <article class="tarjeta">
+        <div class="icono">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>
+        </div>
+        <h3>Lista de espera</h3>
+        <p>
+          Cuando se cae una cita, te dice a quién llamar según los días y
+          horas que cada paciente te dijo que podía.
+        </p>
+      </article>
+
+      <article class="tarjeta">
+        <div class="icono">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
+        </div>
+        <h3>Reportes del día</h3>
+        <p>
+          Cuánto entró, por qué método y cuántos pacientes viniste. Sin armar
+          nada a mano.
+        </p>
+      </article>
+
     </div>
-    <div class="tarjeta">
-      <h3>Cobros</h3>
-      <p>
-        Cobras cuando el paciente llega. Efectivo, tarjeta, transferencia o
-        ARS, y la app aplica sola la cobertura del seguro.
-      </p>
-    </div>
-    <div class="tarjeta">
-      <h3>Caja diaria</h3>
-      <p>
-        Al cerrar el día cuentas el efectivo y la app te dice si cuadra,
-        falta o sobra. Nada de aprobar cierres a ciegas.
-      </p>
-    </div>
-    <div class="tarjeta">
-      <h3>Tu asistente</h3>
-      <p>
-        Trabaja contigo sin ver lo que no le toca. Lo que mueve dinero —una
-        devolución, anular un cobro, reabrir la caja— ella lo pide y tú lo
-        apruebas desde tu teléfono.
-      </p>
-    </div>
-    <div class="tarjeta">
-      <h3>Lista de espera</h3>
-      <p>
-        Cuando se cae una cita, la app te dice a quién llamar para llenar ese
-        hueco, según los días y horas que cada paciente te dijo que podía.
-      </p>
-    </div>
-    <div class="tarjeta">
-      <h3>Reportes del día</h3>
-      <p>
-        Cuánto entró, por qué método y cuántos pacientes viniste. Sin armar
-        nada a mano.
-      </p>
+
+    <div class="destacado">
+      <div class="icono">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <h3>No guarda la historia clínica de tus pacientes</h3>
+        <p>
+          Ni diagnósticos, ni síntomas, ni medicamentos, ni notas de consulta.
+          MediConsulta es la parte administrativa: agenda, cobros y caja. Lo
+          que conversas con tu paciente no pasa por aquí.
+        </p>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="aviso">
-    <p>
-      <strong>No es una historia clínica.</strong> MediConsulta es una
-      herramienta administrativa: no guarda diagnósticos, síntomas,
-      medicamentos ni notas de consulta. Lo que conversas con tu paciente no
-      pasa por aquí.
+<section id="como" class="alt">
+  <div class="caja">
+    <div class="titulo">
+      <p class="eyebrow">Cómo funciona</p>
+      <h2>El día, de principio a fin</h2>
+    </div>
+
+    <div class="pasos">
+      <div class="paso">
+        <div>
+          <h3>Abres la caja</h3>
+          <p>
+            Al empezar el día. Si la abre tu asistente, te llega el aviso y lo
+            apruebas desde tu teléfono.
+          </p>
+        </div>
+      </div>
+      <div class="paso">
+        <div>
+          <h3>Agendas a quien llame</h3>
+          <p>
+            Eliges la hora libre y el paciente. Si no existe, lo creas ahí
+            mismo.
+          </p>
+        </div>
+      </div>
+      <div class="paso">
+        <div>
+          <h3>Cobras cuando llega</h3>
+          <p>
+            El dinero entra a la caja y la cita se marca sola como que llegó.
+            No hay que tocar dos pantallas.
+          </p>
+        </div>
+      </div>
+      <div class="paso">
+        <div>
+          <h3>Cierras y cuadras</h3>
+          <p>
+            Cuentas el efectivo, la app compara con lo cobrado y te dice si
+            cuadra. Si tu asistente cerró, tú apruebas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="planes">
+  <div class="caja">
+    <div class="titulo">
+      <p class="eyebrow">Planes</p>
+      <h2>Precios claros, sin letra chica</h2>
+      <p>
+        Catorce días de prueba sin tarjeta. Si cancelas, tus datos se
+        conservan y los sigues consultando.
+      </p>
+    </div>
+
+    <div class="planes">
+
+      <div class="plan">
+        <div class="nombre">Starter</div>
+        <p class="monto">US$29 <small>/ mes</small></p>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 1 consultorio</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 1 asistente</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Agenda, cobros, caja y reportes</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Lista de espera y avisos por WhatsApp</li>
+        </ul>
+      </div>
+
+      <div class="plan elegido">
+        <span class="cinta">El más usado</span>
+        <div class="nombre">Pro</div>
+        <p class="monto">US$49 <small>/ mes</small></p>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 2 consultorios</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 2 asistentes</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Todo lo del Starter</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Cada consultorio con su propia caja</li>
+        </ul>
+      </div>
+
+      <div class="plan">
+        <div class="nombre">¿Necesitas más?</div>
+        <p class="monto">+US$12 <small>/ consultorio</small></p>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Cada uno trae 1 asistente incluido</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Asistente suelto: US$5 / mes</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Se suman al plan que ya tengas</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="nota-chica">
+      Precios en dólares. El cobro se procesa por Google Play; la app nunca ve
+      ni guarda datos de tarjeta.
     </p>
-  </div>
 
-  <h2 id="planes">Planes</h2>
-
-  <p>
-    Catorce días de prueba, sin tarjeta. Después eliges el plan que te sirva
-    y puedes cancelar cuando quieras: si cancelas, tus datos se conservan y
-    los sigues consultando.
-  </p>
-
-  <div class="planes">
-    <div class="plan">
-      <div class="nombre">Starter</div>
-      <div class="precio">USD 29</div>
-      <div class="periodo">por mes</div>
-      <ul>
-        <li>1 consultorio</li>
-        <li>1 asistente</li>
-        <li>Agenda, cobros, caja y reportes</li>
-      </ul>
-    </div>
-    <div class="plan destacado">
-      <div class="nombre">Pro</div>
-      <div class="precio">USD 49</div>
-      <div class="periodo">por mes</div>
-      <ul>
-        <li>2 consultorios</li>
-        <li>2 asistentes</li>
-        <li>Todo lo del Starter</li>
-      </ul>
-    </div>
-    <div class="plan">
-      <div class="nombre">¿Necesitas más?</div>
-      <div class="precio">+ USD 12</div>
-      <div class="periodo">por consultorio adicional</div>
-      <ul>
-        <li>Cada uno trae 1 asistente incluido</li>
-        <li>Asistente suelto: USD 5/mes</li>
-      </ul>
+    <div class="destacado" style="margin-top:44px">
+      <div class="icono">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity=".25"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
+      </div>
+      <div>
+        <h3>¿Dudas antes de empezar?</h3>
+        <p>
+          Escríbeme a
+          <a href="mailto:jhonatandavidfernandezr@gmail.com">jhonatandavidfernandezr@gmail.com</a>
+          y te respondo.
+        </p>
+      </div>
     </div>
   </div>
-
-  <p class="fecha">
-    Precios en dólares, referenciales. El cobro se procesa por Google Play.
-  </p>
-
-  <h2>¿Cómo empiezo?</h2>
-
-  <p>
-    Entras con tu cuenta de Google, configuras tu consultorio y tu horario, y
-    ya puedes agendar. No hace falta instalar nada en una computadora ni
-    contratar a nadie para que te lo monte.
-  </p>
-
-  <p>
-    Si tienes dudas antes de empezar, escríbeme a
-    <a href="mailto:jhonatandavidfernandezr@gmail.com">jhonatandavidfernandezr@gmail.com</a>.
-  </p>
-
-</main>
+</section>
 
 <footer class="sitio">
   <div class="caja">
     <nav>
+      <a href="index.html">Inicio</a>
       <a href="privacidad.html">Privacidad</a>
       <a href="terminos.html">Términos</a>
       <a href="soporte.html">Soporte</a>
     </nav>
-    <div class="quien">Jhonatan David Fernández Rosa · República Dominicana</div>
+    <div class="quien">
+      Jhonatan David Fernández Rosa<br>
+      República Dominicana
+    </div>
   </div>
 </footer>
 
