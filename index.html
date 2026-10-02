@@ -4,10 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MediConsulta — Agenda, cobros y caja para tu consultorio</title>
-<meta name="description" content="App para médicos en República Dominicana: agenda el día, cobra al paciente y cuadra la caja. Con acceso para tu asistente y aprobación tuya para lo que mueve dinero.">
+<meta name="description" content="App para médicos en República Dominicana: agenda el día, cobra al paciente y cuadra la caja antes de irte. Con acceso para tu asistente y aprobación tuya para lo que mueve dinero.">
+<meta name="theme-color" content="#04140f">
 <meta property="og:title" content="MediConsulta">
 <meta property="og:description" content="Agenda, cobros y caja para tu consultorio. Hecho para República Dominicana.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="img/inicio.png">
 <link rel="stylesheet" href="estilo.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2300796b'/><path d='M50 26v48M26 50h48' stroke='white' stroke-width='12' stroke-linecap='round'/></svg>">
 </head>
@@ -24,12 +26,14 @@
     <nav>
       <a href="#funciones" class="ocultable">Funciones</a>
       <a href="#como" class="ocultable">Cómo funciona</a>
+      <a href="#pantallas" class="ocultable">Pantallas</a>
       <a href="#planes">Planes</a>
-      <a href="soporte.html">Soporte</a>
+      <a href="soporte.html" class="cta">Soporte</a>
     </nav>
   </div>
 </header>
 
+<!-- ------------------------------------------------------------- portada -->
 <section class="portada">
   <div class="caja">
     <div>
@@ -50,7 +54,7 @@
           Ver los planes
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a class="boton suave" href="#como">Cómo funciona</a>
+        <a class="boton suave" href="#como">Ver cómo funciona</a>
       </div>
 
       <p class="nota-chica">
@@ -60,15 +64,41 @@
 
     <div class="telefono">
       <div class="pantalla">
-        <img src="img/agenda.png" alt="La agenda del día en MediConsulta: pacientes por hora, quién ya llegó y quién ya pagó." width="1008" height="2104">
+        <img src="img/inicio.png" width="1080" height="2240" alt="Pantalla de inicio de MediConsulta: cobrado hoy RD$5,500.00, tres pacientes llegaron, tres cobradas, cuatro por llegar y la caja abierta.">
       </div>
+
+      <div class="flotante uno">
+        <span class="punto">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </span>
+        Cobrado hoy
+        <small>Sin abrir otra pantalla</small>
+      </div>
+
+      <div class="flotante dos">
+        <span class="punto">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </span>
+        La caja cuadra
+        <small>Contado contra cobrado</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="cifras">
+    <div class="caja">
+      <div class="cifra"><strong>4</strong><span>métodos de pago, incluida la ARS</span></div>
+      <div class="cifra"><strong>1 toque</strong><span>para saber cuánto entró hoy</span></div>
+      <div class="cifra"><strong>0</strong><span>datos clínicos guardados</span></div>
+      <div class="cifra"><strong>14 días</strong><span>de prueba, sin tarjeta</span></div>
     </div>
   </div>
 </section>
 
+<!-- ------------------------------------------------------------ funciones -->
 <section id="funciones">
   <div class="caja">
-    <div class="titulo">
+    <div class="titulo revelar">
       <p class="eyebrow">Qué hace</p>
       <h2>Lo que de verdad pasa en un consultorio</h2>
       <p>
@@ -79,7 +109,7 @@
 
     <div class="rejilla">
 
-      <article class="tarjeta">
+      <article class="tarjeta revelar">
         <div class="icono">
           <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
         </div>
@@ -90,7 +120,7 @@
         </p>
       </article>
 
-      <article class="tarjeta">
+      <article class="tarjeta revelar">
         <div class="icono">
           <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
@@ -101,7 +131,7 @@
         </p>
       </article>
 
-      <article class="tarjeta">
+      <article class="tarjeta revelar">
         <div class="icono">
           <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         </div>
@@ -112,7 +142,7 @@
         </p>
       </article>
 
-      <article class="tarjeta">
+      <article class="tarjeta revelar">
         <div class="icono">
           <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
         </div>
@@ -123,7 +153,7 @@
         </p>
       </article>
 
-      <article class="tarjeta">
+      <article class="tarjeta revelar">
         <div class="icono">
           <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14M5 2h14M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>
         </div>
@@ -134,20 +164,20 @@
         </p>
       </article>
 
-      <article class="tarjeta">
+      <article class="tarjeta revelar">
         <div class="icono">
           <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>
         </div>
         <h3>Reportes del día</h3>
         <p>
-          Cuánto entró, por qué método y cuántos pacientes viniste. Sin armar
+          Cuánto entró, por qué método y cuántos pacientes viste. Sin armar
           nada a mano.
         </p>
       </article>
 
     </div>
 
-    <div class="destacado">
+    <div class="destacado revelar">
       <div class="icono">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
@@ -163,57 +193,143 @@
   </div>
 </section>
 
+<!-- ----------------------------------------------------------- cómo funciona -->
 <section id="como" class="alt">
   <div class="caja">
-    <div class="titulo">
+    <div class="titulo revelar">
       <p class="eyebrow">Cómo funciona</p>
       <h2>El día, de principio a fin</h2>
+      <p>
+        Cuatro momentos. Los mismos que ya vives todos los días, pero sin
+        papeles sueltos ni cuentas de cabeza.
+      </p>
     </div>
 
-    <div class="pasos">
-      <div class="paso">
-        <div>
-          <h3>Abres la caja</h3>
+    <div class="flujo">
+
+      <div class="fila revelar">
+        <div class="texto">
+          <span class="paso-num">1</span>
+          <h3>Abres el día y ves la agenda</h3>
           <p>
-            Al empezar el día. Si la abre tu asistente, te llega el aviso y lo
-            apruebas desde tu teléfono.
+            Quién viene, a qué hora, quién ya llegó y quién ya pagó. Las horas
+            libres se ven de una vez, así que agendar una llamada toma segundos.
           </p>
+          <ul class="lista-check">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vista de hoy, del día o de la semana</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Arrastras la cita a otra hora</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Recordatorio al paciente por WhatsApp</li>
+          </ul>
+        </div>
+        <div class="marco">
+          <div class="telefono">
+            <div class="pantalla">
+              <img src="img/agenda.png" width="1080" height="2240" loading="lazy" alt="Agenda del día en MediConsulta, con las citas por hora y el estado de cada una.">
+            </div>
+          </div>
         </div>
       </div>
-      <div class="paso">
-        <div>
-          <h3>Agendas a quien llame</h3>
+
+      <div class="fila revelar">
+        <div class="texto">
+          <span class="paso-num">2</span>
+          <h3>Llega el paciente y lo cobras</h3>
           <p>
-            Eliges la hora libre y el paciente. Si no existe, lo creas ahí
-            mismo.
+            Lo buscas por nombre, cédula o teléfono, eliges el servicio, el método de pago y, si tiene seguro, la ARS.
+            El dinero entra a la caja y la cita queda marcada como cobrada sin
+            tocar otra pantalla.
           </p>
+          <ul class="lista-check">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Efectivo, tarjeta, transferencia o ARS</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Se puede pagar con dos métodos a la vez</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Comprobante para el paciente</li>
+          </ul>
+        </div>
+        <div class="marco">
+          <div class="telefono">
+            <div class="pantalla">
+              <img src="img/pacientes.png" width="1080" height="2240" loading="lazy" alt="Lista de pacientes en MediConsulta, con cédula, teléfono y la ARS de cada uno.">
+            </div>
+          </div>
         </div>
       </div>
-      <div class="paso">
-        <div>
-          <h3>Cobras cuando llega</h3>
+
+      <div class="fila revelar">
+        <div class="texto">
+          <span class="paso-num">3</span>
+          <h3>Cierras y la caja cuadra</h3>
           <p>
-            El dinero entra a la caja y la cita se marca sola como que llegó.
-            No hay que tocar dos pantallas.
+            Cuentas el efectivo que hay en la gaveta, la app lo compara con lo
+            que se cobró y te dice si <strong>cuadra, falta o sobra</strong>.
+            Si tu asistente cerró, te llega para aprobar — con el número ya
+            comparado, no a ciegas.
           </p>
+          <ul class="lista-check">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Desglose por método de pago</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Lo pendiente se muestra aparte, no se suma</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Apruebas o rechazas desde tu teléfono</li>
+          </ul>
+        </div>
+        <div class="marco">
+          <div class="telefono">
+            <div class="pantalla">
+              <img src="img/caja.png" width="1080" height="2240" loading="lazy" alt="Cierre de caja en MediConsulta: desglose por método, total cobrado RD$5,500.00, efectivo contado y el aviso de que cuadra.">
+            </div>
+          </div>
         </div>
       </div>
-      <div class="paso">
-        <div>
-          <h3>Cierras y cuadras</h3>
-          <p>
-            Cuentas el efectivo, la app compara con lo cobrado y te dice si
-            cuadra. Si tu asistente cerró, tú apruebas.
-          </p>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
 
-<section id="planes">
+<!-- ------------------------------------------------------------ pantallas -->
+<section id="pantallas">
   <div class="caja">
-    <div class="titulo">
+    <div class="titulo centro revelar">
+      <p class="eyebrow">Pantallas</p>
+      <h2>Así se ve, sin maquillaje</h2>
+      <p>
+        Capturas tomadas de la app funcionando. Los nombres son de fantasía:
+        aquí no se muestra ningún dato de pacientes reales.
+      </p>
+    </div>
+
+    <div class="galeria">
+      <figure class="revelar">
+        <div class="telefono">
+          <div class="pantalla">
+            <img src="img/inicio.png" width="1080" height="2240" loading="lazy" alt="Inicio de MediConsulta con lo cobrado hoy y el estado de la caja.">
+          </div>
+        </div>
+        <figcaption>Inicio · lo del día en un vistazo</figcaption>
+      </figure>
+
+      <figure class="revelar">
+        <div class="telefono">
+          <div class="pantalla">
+            <img src="img/agenda.png" width="1080" height="2240" loading="lazy" alt="Agenda del día con las citas por hora.">
+          </div>
+        </div>
+        <figcaption>Agenda · quién viene y quién pagó</figcaption>
+      </figure>
+
+      <figure class="revelar">
+        <div class="telefono">
+          <div class="pantalla">
+            <img src="img/caja.png" width="1080" height="2240" loading="lazy" alt="Cierre de caja con el cuadre del efectivo.">
+          </div>
+        </div>
+        <figcaption>Caja · cuadra, falta o sobra</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- --------------------------------------------------------------- planes -->
+<section id="planes" class="alt">
+  <div class="caja">
+    <div class="titulo revelar">
       <p class="eyebrow">Planes</p>
       <h2>Precios claros, sin letra chica</h2>
       <p>
@@ -224,7 +340,7 @@
 
     <div class="planes">
 
-      <div class="plan">
+      <div class="plan revelar">
         <div class="nombre">Starter</div>
         <p class="monto">US$29 <small>/ mes</small></p>
         <ul>
@@ -235,7 +351,7 @@
         </ul>
       </div>
 
-      <div class="plan elegido">
+      <div class="plan elegido revelar">
         <span class="cinta">El más usado</span>
         <div class="nombre">Pro</div>
         <p class="monto">US$49 <small>/ mes</small></p>
@@ -247,7 +363,7 @@
         </ul>
       </div>
 
-      <div class="plan">
+      <div class="plan revelar">
         <div class="nombre">¿Necesitas más?</div>
         <p class="monto">+US$12 <small>/ consultorio</small></p>
         <ul>
@@ -259,23 +375,27 @@
 
     </div>
 
-    <p class="nota-chica">
+    <p class="nota-chica" style="color:var(--tinta-3)">
       Precios en dólares. El cobro se procesa por Google Play; la app nunca ve
       ni guarda datos de tarjeta.
     </p>
+  </div>
+</section>
 
-    <div class="destacado" style="margin-top:44px">
-      <div class="icono">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity=".25"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
-      </div>
-      <div>
-        <h3>¿Dudas antes de empezar?</h3>
-        <p>
-          Escríbeme a
-          <a href="mailto:jhonatandavidfernandezr@gmail.com">jhonatandavidfernandezr@gmail.com</a>
-          y te respondo.
-        </p>
-      </div>
+<!-- --------------------------------------------------------------- cierre -->
+<section style="padding-top:0">
+  <div class="cierre revelar">
+    <h2>¿Lo probamos con tu consultorio?</h2>
+    <p>
+      Escríbeme y te acompaño en la configuración: tus servicios, tus precios,
+      las ARS que aceptas y el acceso de tu asistente.
+    </p>
+    <div class="acciones">
+      <a class="boton primario" href="mailto:jhonatandavidfernandezr@gmail.com">
+        Escribirme
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="boton suave" href="soporte.html">Preguntas frecuentes</a>
     </div>
   </div>
 </section>
@@ -294,6 +414,39 @@
     </div>
   </div>
 </footer>
+
+<script>
+// La barra se separa del fondo apenas se baja: sin esto, al scrollear el
+// contenido se mete debajo del header translucido y se ve sucio.
+var barra = document.querySelector('.barra');
+addEventListener('scroll', function () {
+  barra.classList.toggle('pegada', scrollY > 8);
+}, { passive: true });
+
+// Las secciones aparecen al entrar en pantalla. Si el navegador no soporta
+// IntersectionObserver, o el usuario pidio menos movimiento, se muestran de
+// una vez: la animacion es un adorno, el contenido no.
+var piezas = document.querySelectorAll('.revelar');
+var quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!('IntersectionObserver' in window) || quieto) {
+  piezas.forEach(function (p) { p.classList.add('visible'); });
+} else {
+  var ojo = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        ojo.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+
+  piezas.forEach(function (p, i) {
+    p.style.transitionDelay = (i % 3) * 70 + 'ms';
+    ojo.observe(p);
+  });
+}
+</script>
 
 </body>
 </html>
