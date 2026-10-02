@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="es-DO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidad — MediConsulta</title>
+<meta name="description" content="Política de privacidad de MediConsulta: qué datos se guardan, para qué, dónde y cómo pedir que se borren.">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header class="sitio">
+  <div class="barra">
+    <a class="marca" href="index.html">MediConsulta</a>
+    <nav>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="terminos.html">Términos</a>
+      <a href="soporte.html">Soporte</a>
+    </nav>
+  </div>
+</header>
+
+<main class="legal">
+
+<h1>Política de Privacidad</h1>
+<p class="fecha">Última actualización: 1 de octubre de 2026</p>
+
+<h2>1. Quién responde por los datos</h2>
+
+<p>
+  MediConsulta es una aplicación que los médicos usan para llevar la parte
+  administrativa de su consulta: pacientes, citas, cobros y caja.
+</p>
+
+<ul>
+  <li>
+    <strong>El Doctor es el responsable</strong> de los datos de sus
+    pacientes. Él tiene la relación directa con el paciente y decide qué
+    registrar.
+  </li>
+  <li>
+    <strong>MediConsulta actúa como encargado del tratamiento</strong>:
+    aloja y procesa esos datos por cuenta del Doctor.
+  </li>
+</ul>
+
+<p>
+  MediConsulta lo opera <strong>Jhonatan David Fernández Rosa</strong>,
+  persona física, en República Dominicana. Para cualquier tema de datos:
+  <a href="mailto:jhonatandavidfernandezr@gmail.com">jhonatandavidfernandezr@gmail.com</a>.
+</p>
+
+<p>
+  Si usted es paciente y tiene preguntas sobre sus datos, contacte primero al
+  Doctor que lo atiende: su ficha y su información le pertenecen a él.
+</p>
+
+<h2>2. Qué datos se guardan</h2>
+
+<h3>Lo que esta aplicación NO guarda</h3>
+
+<div class="aviso">
+  <p>
+    <strong>No hay historia clínica.</strong> No se registran diagnósticos,
+    síntomas, alergias, medicamentos, resultados de estudios, notas de
+    consulta ni archivos del paciente. MediConsulta es administrativa: sirve
+    para agendar, cobrar y cuadrar la caja. Lo que el Doctor conversa con su
+    paciente y lo que le encuentra no pasa por aquí.
+  </p>
+  <p>
+    Tampoco se guardan datos de tarjetas de crédito ni cuentas bancarias.
+  </p>
+</div>
+
+<h3>Lo que sí se guarda</h3>
+
+<p>
+  <strong>Del Doctor:</strong> nombre, correo y foto de su cuenta de Google,
+  teléfono, cédula, especialidad y número de exequátur si aplica.
+</p>
+
+<p>
+  <strong>De los Pacientes</strong> (registrados por el Doctor o su
+  asistente): nombre, cédula, teléfono, aseguradora (ARS) y número de
+  afiliado.
+</p>
+
+<p>
+  <strong>Datos operativos:</strong> citas, cobros, métodos de pago, caja
+  diaria, consultorios y servicios. Todos asociados al Doctor que los
+  registró, nunca compartidos entre Doctores distintos.
+</p>
+
+<p>
+  <strong>Identificador del dispositivo para notificaciones:</strong> si el
+  Doctor o la asistente aceptan recibir avisos, se guarda el identificador
+  que Firebase Cloud Messaging le asigna a esa instalación, junto con la
+  plataforma. Sirve únicamente para avisar cuando hay algo que aprobar o
+  cuando el Doctor respondió. No identifica a la persona por sí solo y se
+  borra al eliminar la cuenta.
+</p>
+
+<h3>Por qué esto igual se trata como información de salud</h3>
+
+<p>
+  Aunque no se guarde nada clínico, el registro de que una persona
+  <strong>tiene una cita con un médico</strong> dice algo sobre su salud. Si
+  el Doctor es cardiólogo, la fila «Juan Pérez, cita del 27/09» revela que
+  Juan se atiende con un cardiólogo, sin que nadie haya escrito un
+  diagnóstico.
+</p>
+
+<p>
+  Por eso la combinación de <em>cita agendada</em> + <em>ARS</em> se trata
+  con las mismas protecciones que el resto de la información sensible de esta
+  política, y se declara así en el formulario de Seguridad de los Datos de
+  Google Play. No implica que la aplicación guarde información clínica: no la
+  guarda.
+</p>
+
+<h2>3. Para qué se usan</h2>
+
+<ul>
+  <li>Operar la aplicación: agenda, cobros, caja y reportes del propio Doctor.</li>
+  <li>
+    Evitar duplicar la identidad de un mismo paciente entre varios Doctores
+    (comparando cédula), sin compartir entre ellos el historial financiero.
+  </li>
+  <li>
+    Detectar y prevenir abuso, por ejemplo que una misma persona use varias
+    cuentas para obtener múltiples pruebas gratis.
+  </li>
+  <li>Auditoría interna de acciones sensibles, para seguridad y soporte.</li>
+</ul>
+
+<h2>4. Con quién se comparten, y dónde están</h2>
+
+<p>
+  <strong>No se venden ni se comparten con terceros para publicidad.</strong>
+  No hay publicidad en la aplicación ni herramientas de seguimiento de
+  terceros.
+</p>
+
+<p>Los proveedores que intervienen son tres, y cada uno ve solo lo que necesita:</p>
+
+<ul>
+  <li>
+    <strong>Supabase</strong> aloja la base de datos y gestiona el inicio de
+    sesión. Es donde viven todos los datos descritos arriba.
+  </li>
+  <li>
+    <strong>Google (Firebase Cloud Messaging)</strong> entrega las
+    notificaciones. Recibe el identificador del dispositivo y el texto del
+    aviso (por ejemplo «Cerrar la caja del 19/09/2026»).
+    <strong>No recibe datos de pacientes</strong>: los avisos nunca llevan el
+    nombre de un paciente ni información clínica.
+  </li>
+  <li>
+    <strong>Google Play</strong>, cuando se active el cobro dentro de la
+    aplicación, procesará el pago de la suscripción del Doctor conforme a su
+    propia política. La aplicación nunca ve ni guarda datos de tarjeta.
+  </li>
+</ul>
+
+<h3>Dónde se guardan (transferencia internacional)</h3>
+
+<p>
+  <strong>Los datos se alojan en servidores ubicados en los Estados
+  Unidos</strong>, en la infraestructura de Supabase. Esto significa que la
+  información descrita arriba <strong>sale de República Dominicana</strong>
+  para ser almacenada y procesada.
+</p>
+
+<p>
+  Se hace bajo las medidas de seguridad de la sección 7 y con la única
+  finalidad de prestar el servicio contratado por el Doctor. Al usar la
+  aplicación, el Doctor —como responsable del tratamiento de los datos de sus
+  pacientes— autoriza esta transferencia y asume informar a sus pacientes de
+  ella cuando la normativa aplicable se lo exija.
+</p>
+
+<h2>5. Consentimiento del paciente</h2>
+
+<p>
+  Como el paciente hoy no usa la aplicación directamente, al crear la ficha se
+  registra si el Doctor o su asistente obtuvo su consentimiento (verbal o en
+  papel), con fecha y quién lo registró. Ese registro queda auditado.
+</p>
+
+<h2>6. Sus derechos</h2>
+
+<p>El Doctor puede, en cualquier momento:</p>
+
+<ul>
+  <li>Ver, corregir o eliminar los datos de sus pacientes.</li>
+  <li>Exportar o solicitar información sobre lo que está almacenado.</li>
+  <li>
+    <strong>Dejar de pagar sin perder nada:</strong> en «Plan y suscripción»,
+    el botón <em>Cancelar suscripción</em> detiene el cobro y deja la cuenta
+    en <strong>modo solo lectura</strong>. Los datos no se borran: se pueden
+    seguir consultando citas, cobros y caja, pero no registrar nada nuevo. Se
+    puede volver eligiendo un plan.
+  </li>
+  <li>
+    <strong>Eliminar su cuenta por completo:</strong> en <strong>«Mi
+    perfil»</strong>, el botón <em>Eliminar mi cuenta</em> borra de forma
+    permanente sus consultorios, pacientes vinculados, citas, cobros y caja.
+    Esta acción es irreversible.
+  </li>
+</ul>
+
+<h3>Cómo pedir la eliminación sin entrar a la aplicación</h3>
+
+<div class="aviso">
+  <p>
+    Si ya no tiene acceso a la aplicación —porque la desinstaló, porque perdió
+    el acceso a su cuenta de Google, o por cualquier otro motivo— puede
+    solicitar la eliminación de su cuenta y de sus datos escribiendo a
+    <a href="mailto:jhonatandavidfernandezr@gmail.com">jhonatandavidfernandezr@gmail.com</a>
+    desde el correo con el que se registró.
+  </p>
+  <p>
+    La solicitud se atiende <strong>dentro de los 30 días</strong> siguientes,
+    y se confirma por escrito al completarse.
+  </p>
+</div>
+
+<p>
+  El paciente puede ejercer estos mismos derechos poniéndose en contacto con
+  el Doctor que lo atiende.
+</p>
+
+<h2>7. Seguridad</h2>
+
+<ul>
+  <li>Autenticación mediante Google: no se manejan contraseñas.</li>
+  <li>
+    Control de acceso por fila en la base de datos: cada Doctor solo puede
+    leer y escribir sus propios datos; una asistente, solo los del consultorio
+    donde tiene acceso activo.
+  </li>
+  <li>Conexiones cifradas (HTTPS/TLS).</li>
+  <li>
+    Auditoría automática de acciones sensibles: citas, cobros, caja,
+    servicios y asistentes.
+  </li>
+</ul>
+
+<h2>8. Retención de datos</h2>
+
+<ul>
+  <li>
+    Mientras la cuenta esté activa, los datos se conservan para el uso normal
+    de la aplicación.
+  </li>
+  <li>
+    Si la suscripción vence, se suspende o el Doctor la cancela, la cuenta
+    pasa a <strong>modo solo lectura</strong>. Los datos no se borran, pero no
+    se puede agendar, cobrar, abrir caja ni modificar información hasta
+    reactivar el plan.
+  </li>
+  <li>
+    Si el Doctor elimina su cuenta, sus datos se borran de forma permanente.
+    La identidad de un paciente que también atiende otro Doctor no se borra de
+    ese otro Doctor: únicamente se corta la relación con la cuenta eliminada.
+  </li>
+</ul>
+
+<h2>9. Menores de edad</h2>
+
+<p>
+  La aplicación está dirigida a profesionales de la salud y su personal
+  administrativo, no a menores de edad. Los datos de pacientes menores que un
+  Doctor registre son responsabilidad de ese Doctor conforme a la normativa
+  aplicable.
+</p>
+
+<h2>10. Cambios a esta política</h2>
+
+<p>
+  Esta política puede actualizarse. Los cambios importantes se notificarán
+  dentro de la aplicación, y la fecha de arriba indica la versión vigente.
+</p>
+
+<h2>11. Contacto</h2>
+
+<p>
+  Jhonatan David Fernández Rosa · República Dominicana<br>
+  <a href="mailto:jhonatandavidfernandezr@gmail.com">jhonatandavidfernandezr@gmail.com</a>
+</p>
+
+</main>
+
+<footer class="sitio">
+  <div class="caja">
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="terminos.html">Términos</a>
+      <a href="soporte.html">Soporte</a>
+    </nav>
+    <div class="quien">Jhonatan David Fernández Rosa · República Dominicana</div>
+  </div>
+</footer>
+
+</body>
+</html>
